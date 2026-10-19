@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ashfaq Rahman — Motion Designer</title>
+<meta name="description" content="Ashfaq Rahman — Motion Designer & Video Editor in Dhaka. Motion graphics, reels, short-form and brand animation. 350+ reels delivered.">
+<meta property="og:title" content="Ashfaq Rahman — Motion Designer & Video Editor">
+<meta property="og:description" content="Motion graphics, reels and branded video. 350+ reels delivered.">
+<meta property="og:image" content="photo.jpg">
+<meta name="theme-color" content="#0a0b0e">
+<link rel="icon" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+  try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  document.documentElement.classList.add("js");
+</script>
+<style>
+  :root, [data-theme="dark"] {
+    --bg: #0a0b0e;
+    --panel: #15171c;
+    --panel-2: #1b1e24;
+    --head: #101216;
+    --text: #eceef1;
+    --muted: #8b919b;
+    --dim: #5c626c;
+    --line: #262a32;
+    --accent: #3d9bff;
+    --ae: #9a8cff;
+    --glow: rgba(61, 155, 255, .35);
+    --comp: radial-gradient(120% 90% at 75% 70%, #3a8fd0 0%, #163a63 38%, #0a1424 75%);
+    --grain: .05;
+    /* After Effects label colours */
+    --l-red: #e35d5d; --l-yel: #e8c547; --l-aqua: #4ccfc4; --l-pink: #e57bb6;
+    --l-lav: #a99bf2; --l-peach: #f0a868; --l-sea: #93dcaa; --l-blue: #5b8def;
+  }
+  [data-theme="light"] {
+    --bg: #eef0f3;
+    --panel: #ffffff;
+    --panel-2: #f5f6f8;
+    --head: #e4e7ec;
+    --text: #14171c;
+    --muted: #5f6672;
+    --dim: #9aa1ab;
+    --line: #d6dae1;
+    --accent: #1f7ae0;
+    --ae: #6b5ce7;
+    --glow: rgba(31, 122, 224, .25);
+    --comp: radial-gradient(120% 90% at 75% 70%, #7cc0f0 0%, #3c7fbf 40%, #173a63 80%);
+    --grain: .03;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--text);
+    font: 16px/1.6 Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased;
+    overflow-x: hidden; padding-bottom: 40px; transition: background .4s, color .4s;
+  }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+  .mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .serif { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; }
+  em { font-style: italic; }
+
+  /* Background */
+  .bg { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+  .orb { position: absolute; border-radius: 50%; filter: blur(100px); opacity: .35; }
+  .orb.a { width: 560px; height: 560px; background: var(--accent); top: -220px; right: -180px; animation: drift 18s ease-in-out infinite alternate; }
+  .orb.b { width: 460px; height: 460px; background: var(--ae); bottom: -220px; left: -180px; opacity: .22; animation: drift 24s ease-in-out infinite alternate-reverse; }
+  @keyframes drift { to { transform: translate(-120px, 140px) scale(1.15); } }
+  .grain { position: absolute; inset: -50%; opacity: var(--grain); animation: grain 1s steps(4) infinite;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  @keyframes grain { 25% { transform: translate(-3%, 2%); } 50% { transform: translate(2%, -3%); } 75% { transform: translate(-2%, -2%); } }
+
+  /* Nav */
+  nav { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 75%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 12px; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 14px; }
+  .logo b { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 7px; background: linear-gradient(135deg, var(--accent), var(--ae)); color: #fff; font-family: "JetBrains Mono", monospace; font-size: 12px; }
+  .links { display: flex; gap: 22px; }
+  .links a { font-size: 14px; color: var(--muted); transition: color .2s; }
+  .links a:hover { color: var(--text); }
+  .nav-r { display: flex; align-items: center; gap: 8px; }
+  .icon-btn { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: var(--panel); display: grid; place-items: center; transition: transform .3s, border-color .3s; }
+  .icon-btn:hover { border-color: var(--accent); transform: rotate(25deg); }
+  .icon-btn svg { width: 16px; height: 16px; }
+  .pill { display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 14px; border-radius: 999px; background: #25d366; color: #052410; font-size: 13px; font-weight: 600; }
+  .pill svg { width: 16px; height: 16px; }
+
+  /* ---------- Generic panel (AE / Premiere style) ---------- */
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .ph { display: flex; align-items: center; gap: 6px; height: 32px; padding: 0 10px; background: var(--head); border-bottom: 1px solid var(--line); font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; }
+  .tab { padding: 0 8px; height: 100%; display: flex; align-items: center; gap: 6px; }
+  .tab.on { color: var(--text); box-shadow: inset 0 -2px var(--accent); }
+  .tab .x { color: var(--dim); }
+  .ph .sp { flex: 1; }
+  .ico { width: 12px; height: 12px; border-radius: 2px; display: inline-block; flex-shrink: 0; }
+
+  /* ---------- Hero: AE workspace ---------- */
+  .hero { padding: 28px 0 0; }
+  .app { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--head); box-shadow: 0 30px 80px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.02); }
+  .titlebar { display: flex; align-items: center; gap: 14px; height: 34px; padding: 0 12px; font-size: 12px; color: var(--muted); border-bottom: 1px solid var(--line); }
+  .dots { display: flex; gap: 7px; }
+  .dots i { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; }
+  .dots i:nth-child(2) { background: #febc2e; } .dots i:nth-child(3) { background: #28c840; }
+  .titlebar .file { flex: 1; text-align: center; font-family: "JetBrains Mono", monospace; font-size: 11px; }
+  .menubar { display: flex; gap: 18px; height: 28px; align-items: center; padding: 0 14px; font-size: 12px; color: var(--muted); border-bottom: 1px solid var(--line); }
+  .ws { display: grid; grid-template-columns: 190px 1fr 232px; gap: 4px; padding: 4px; }
+  .ws .panel { border-radius: 6px; }
+
+  .proj ul { list-style: none; padding: 6px 0; font-size: 12px; }
+  .proj li { display: flex; align-items: center; gap: 8px; padding: 5px 12px; color: var(--muted); }
+  .proj li.sel { background: color-mix(in srgb, var(--accent) 22%, transparent); color: var(--text); }
+  .proj li .ico.folder { background: var(--l-yel); }
+  .proj li .ico.cmp { background: var(--ae); }
+  .proj li .ico.vid { background: var(--l-blue); }
+  .proj li .ico.img { background: var(--l-sea); }
+  .proj li .ico.aud { background: var(--l-peach); }
+  .proj .thumb { margin: 10px 12px 4px; height: 92px; border-radius: 4px; background: var(--comp); position: relative; overflow: hidden; }
+  .proj .thumb img { position: absolute; right: 8px; bottom: 0; height: 88%; }
+  .proj .meta { padding: 4px 12px 12px; font-size: 11px; color: var(--dim); font-family: "JetBrains Mono", monospace; }
+
+  /* Composition viewer */
+  .viewer { display: flex; flex-direction: column; }
+  .stage { position: relative; flex: 1; padding: 14px; background:
+      repeating-conic-gradient(var(--panel-2) 0 25%, var(--panel) 0 50%) 0 0 / 18px 18px; }
+  .comp { position: relative; height: 100%; min-height: 520px; border-radius: 4px; overflow: hidden; background: var(--comp); color: #fff; }
+  .comp::after { /* title-safe guides */
+    content: ""; position: absolute; inset: 6% 5%; border: 1px dashed rgba(255,255,255,.14); pointer-events: none; }
+  .comp-text { position: absolute; left: 6%; top: 50%; transform: translateY(-50%); z-index: 3; max-width: 54%; }
+  .comp h1 { font-size: clamp(52px, 6.6vw, 92px); line-height: .88; letter-spacing: -.02em; text-shadow: 0 10px 40px rgba(0,0,0,.35); }
+  .comp h1 .line { display: block; overflow: hidden; padding-bottom: .08em; }
+  .comp h1 em { color: #9fd3ff; }
+  .js .comp h1 .ch { display: inline-block; transform: translateY(110%); animation: up .9s cubic-bezier(.2,.8,.2,1) forwards; }
+  @keyframes up { to { transform: none; } }
+  .role { margin-top: 18px; font-size: 17px; font-weight: 500; display: flex; flex-wrap: wrap; gap: 0 8px; }
+  .swap { display: inline-block; height: 1.5em; overflow: hidden; color: #9fd3ff; }
+  .swap span { display: block; height: 1.5em; line-height: 1.5em; white-space: nowrap; animation: swap 10s infinite; }
+  @keyframes swap {
+    0%, 20% { transform: translateY(0); } 25%, 45% { transform: translateY(-100%); }
+    50%, 70% { transform: translateY(-200%); } 75%, 95% { transform: translateY(-300%); } 100% { transform: translateY(-400%); } }
+  .comp .loc { font-size: 13px; opacity: .75; margin-top: 2px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .btn { position: relative; display: inline-flex; align-items: center; gap: 8px; overflow: hidden; font-size: 14px; font-weight: 500; padding: 11px 20px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); color: var(--text); transition: transform .3s, border-color .3s; }
+  .btn svg { width: 16px; height: 16px; }
+  .btn:hover { transform: translateY(-2px); border-color: var(--accent); }
+  .btn.solid { background: var(--accent); border-color: var(--accent); color: #fff; box-shadow: 0 8px 30px var(--glow); }
+  .btn.glass { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.25); color: #fff; backdrop-filter: blur(6px); }
+  .btn.wa { background: #25d366; border-color: #25d366; color: #052410; box-shadow: 0 8px 30px rgba(37,211,102,.3); }
+  .btn.solid::after, .btn.wa::after { content: ""; position: absolute; inset: 0; transform: translateX(-120%);
+    background: linear-gradient(100deg, transparent 30%, rgba(255,255,255,.35) 50%, transparent 70%); animation: shine 3.5s ease-in-out infinite; }
+  @keyframes shine { 60%, 100% { transform: translateX(120%); } }
+
+  /* Photo layer with AE selection box */
+  .layer { position: absolute; right: 5%; bottom: 0; width: 42%; aspect-ratio: 992 / 1068; z-index: 2; will-change: transform; }
+  .layer img { width: 100%; height: 100%; object-fit: cover; display: block;
+    -webkit-mask-image: radial-gradient(75% 70% at 50% 45%, #000 55%, transparent 100%); mask-image: radial-gradient(75% 70% at 50% 45%, #000 55%, transparent 100%); }
+  .bbox { position: absolute; inset: 0; border: 1px solid var(--l-lav); pointer-events: none; }
+  .bbox i { position: absolute; width: 8px; height: 8px; background: var(--l-lav); border: 1px solid #fff2; }
+  .bbox i:nth-child(1) { top: -4px; left: -4px; } .bbox i:nth-child(2) { top: -4px; left: calc(50% - 4px); } .bbox i:nth-child(3) { top: -4px; right: -4px; }
+  .bbox i:nth-child(4) { top: calc(50% - 4px); left: -4px; } .bbox i:nth-child(5) { top: calc(50% - 4px); right: -4px; }
+  .bbox i:nth-child(6) { bottom: -4px; left: -4px; } .bbox i:nth-child(7) { bottom: -4px; left: calc(50% - 4px); } .bbox i:nth-child(8) { bottom: -4px; right: -4px; }
+  .anchor { position: absolute; left: 50%; top: 50%; width: 18px; height: 18px; transform: translate(-50%, -50%); }
+  .anchor::before, .anchor::after { content: ""; position: absolute; background: var(--l-lav); }
+  .anchor::before { left: 8px; top: 0; width: 2px; height: 18px; } .anchor::after { top: 8px; left: 0; height: 2px; width: 18px; }
+  .tag { position: absolute; top: -24px; left: -1px; background: var(--l-lav); color: #14102e; font: 500 10px "JetBrains Mono", monospace; padding: 3px 6px; border-radius: 3px 3px 3px 0; }
+  .vbar { display: flex; gap: 14px; align-items: center; height: 28px; padding: 0 10px; font: 11px "JetBrains Mono", monospace; color: var(--muted); border-top: 1px solid var(--line); background: var(--head); white-space: nowrap; overflow: hidden; }
+  .vbar b { color: var(--accent); font-weight: 500; }
+
+  /* Effect controls */
+  .props { font-size: 12px; }
+  .grp { padding: 8px 12px; color: var(--text); display: flex; gap: 6px; align-items: center; font-weight: 500; }
+  .row { display: flex; align-items: center; gap: 8px; padding: 5px 12px 5px 22px; color: var(--muted); }
+  .row .sw { width: 13px; height: 13px; flex-shrink: 0; color: var(--accent); }
+  .row .v { margin-left: auto; color: var(--accent); font-family: "JetBrains Mono", monospace; font-variant-numeric: tabular-nums; }
+  .fx { margin: 6px 12px; padding-top: 10px; border-top: 1px solid var(--line); }
+  .fx .row { padding-left: 10px; }
+  .slider { margin: 2px 12px 8px 32px; height: 3px; border-radius: 3px; background: var(--line); position: relative; }
+  .slider i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: var(--accent); width: var(--w); }
+  .slider i::after { content: ""; position: absolute; right: -5px; top: -4px; width: 10px; height: 10px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 2px var(--accent); }
+
+  /* Timeline */
+  .timeline { grid-column: 1 / -1; }
+  .tl-head { display: flex; align-items: center; gap: 10px; }
+  .play { display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 10px; border-radius: 4px; background: var(--panel-2); border: 1px solid var(--line); font-size: 11px; color: var(--text); }
+  .play svg { width: 10px; height: 10px; }
+  .tl-grid { display: grid; grid-template-columns: 260px 1fr; font-size: 12px; }
+  .tl-cols { border-right: 1px solid var(--line); }
+  .tl-cols .r, .tracks .r { height: 30px; border-bottom: 1px solid var(--line); display: flex; align-items: center; }
+  .tl-cols .r { gap: 9px; padding: 0 10px; color: var(--muted); }
+  .tl-cols .r.hd, .tracks .r.hd { height: 26px; background: var(--head); font-size: 10px; }
+  .tl-cols .r .n { width: 14px; text-align: right; color: var(--dim); font-family: "JetBrains Mono", monospace; font-size: 11px; }
+  .tl-cols .r .nm { color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tl-cols .eye { width: 14px; height: 14px; color: var(--dim); flex-shrink: 0; }
+  .tracks { position: relative; overflow: hidden; }
+  .tracks .r { position: relative; padding: 0 2px; }
+  .ruler { justify-content: space-between; padding: 0 8px !important; color: var(--dim); font-family: "JetBrains Mono", monospace;
+    background: repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 2%) bottom / 100% 6px no-repeat, var(--head) !important; }
+  .bar { position: absolute; top: 6px; bottom: 6px; border-radius: 3px; left: var(--s); right: var(--e); background: color-mix(in srgb, var(--c) 55%, transparent); border: 1px solid var(--c); }
+  .bar.ani { transform-origin: left; }
+  .js .in .bar.ani { animation: grow 1.2s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes grow { from { transform: scaleX(0); } }
+  .kf { position: absolute; top: 50%; width: 9px; height: 9px; background: #e8eaee; transform: translate(-50%, -50%) rotate(45deg); left: var(--x); z-index: 2; box-shadow: 0 0 0 1px rgba(0,0,0,.4); }
+  .kf.ease { border-radius: 50% 0; }
+  .playhead { position: absolute; top: 0; bottom: 0; left: 0; width: 1px; background: var(--accent); z-index: 4; box-shadow: 0 0 8px var(--accent); animation: sweep 8s linear infinite; }
+  .playhead::before { content: ""; position: absolute; top: 0; left: -6px; width: 13px; height: 14px; background: var(--accent); clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 100%, 0 60%); }
+  @keyframes sweep { from { left: 0; } to { left: 100%; } }
+  .paused .playhead, .paused .swap span { animation-play-state: paused; }
+  .workarea { position: absolute; left: 0; right: 12%; top: 0; height: 4px; background: color-mix(in srgb, var(--accent) 50%, transparent); }
+
+  /* Marquee */
+  .marquee { border-block: 1px solid var(--line); overflow: hidden; padding: 16px 0; margin-top: 56px; }
+  .track { display: flex; width: max-content; animation: scroll 30s linear infinite; }
+  .track span { font-family: "Instrument Serif", serif; font-size: 36px; white-space: nowrap; padding-right: 28px; }
+  .track span i { font-style: normal; color: var(--accent); font-size: 14px; vertical-align: 10px; padding-left: 28px; }
+  .track span:nth-child(even) { font-style: italic; color: var(--muted); }
+  @keyframes scroll { to { transform: translateX(-50%); } }
+
+  /* Sections */
+  section { padding: 80px 0 0; scroll-margin-top: 60px; }
+  .label { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+  .label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  h2 { font-size: clamp(38px, 6vw, 60px); line-height: 1.02; margin-bottom: 28px; }
+  h2 em { color: var(--accent); }
+  .lead { font-size: 19px; max-width: 720px; }
+  .muted { color: var(--muted); }
+  p + p { margin-top: 14px; }
+  .about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start; }
+  .stats { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .stat { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 18px 20px; border-radius: 10px; background: var(--panel); border: 1px solid var(--line); }
+  .stat b { font-family: "Instrument Serif", serif; font-weight: 400; font-size: 52px; line-height: 1; background: linear-gradient(90deg, var(--text), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  /* Work: Premiere program monitor + bin */
+  .pp { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 4px; padding: 4px; background: var(--head); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 30px 80px rgba(0,0,0,.35); }
+  .pp .panel { border-radius: 8px; }
+  .monitor { display: flex; flex-direction: column; }
+  .screen { flex: 1; display: grid; place-items: center; padding: 18px; background: #000; min-height: 420px; }
+  .frame { position: relative; height: min(68vh, 640px); aspect-ratio: 9 / 16; max-width: 100%; background: #0d0f13; border-radius: 6px; overflow: hidden; box-shadow: 0 0 0 1px #ffffff14; }
+  .wide .frame { height: auto; width: 100%; aspect-ratio: 16 / 9; }
+  .frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .transport { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 10px; border-top: 1px solid var(--line); background: var(--head); }
+  .tbtn { width: 34px; height: 30px; border-radius: 6px; display: grid; place-items: center; color: var(--muted); transition: background .2s, color .2s; }
+  .tbtn:hover { background: var(--panel-2); color: var(--text); }
+  .tbtn svg { width: 15px; height: 15px; }
+  .tbtn.big { width: 42px; color: #fff; background: var(--accent); }
+  .tbtn.big:hover { background: var(--accent); filter: brightness(1.1); }
+  .seg { display: flex; margin-left: auto; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+  .seg button { font: 11px "JetBrains Mono", monospace; padding: 5px 8px; color: var(--muted); }
+  .seg button.on { background: var(--accent); color: #fff; }
+  .transport .tc { margin-right: auto; font: 12px "JetBrains Mono", monospace; color: var(--accent); }
+  .bin { display: flex; flex-direction: column; }
+  .clips { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 12px; }
+  .clip { text-align: left; border-radius: 8px; padding: 6px; border: 1px solid transparent; transition: border-color .25s, background .25s; }
+  .clip:hover { background: var(--panel-2); }
+  .clip.on { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
+  .clip .th { position: relative; aspect-ratio: 4 / 5; border-radius: 5px; overflow: hidden; background: linear-gradient(135deg, var(--c1), var(--c2)); }
+  .clip .th img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .clip .th::after { content: "▶"; position: absolute; inset: 0; display: grid; place-items: center; font-size: 22px; color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,.6); opacity: .85; transition: transform .3s; }
+  .clip:hover .th::after { transform: scale(1.2); }
+  .clip .cn { display: flex; align-items: center; gap: 6px; margin-top: 7px; font: 12px "JetBrains Mono", monospace; color: var(--text); }
+  .clip .cm { font-size: 11px; color: var(--dim); font-family: "JetBrains Mono", monospace; }
+  .bin .foot { margin-top: auto; padding: 12px; border-top: 1px solid var(--line); }
+  .bin .foot .btn { width: 100%; justify-content: center; }
+
+  /* Experience: AE layer timeline */
+  .gantt .tl-grid { grid-template-columns: 240px 1fr; }
+  .gantt .tracks .r { height: 44px; }
+  .gantt .tl-cols .r { height: 44px; }
+  .gantt .ruler span { flex: 1; text-align: left; padding-left: 4px; border-left: 1px solid var(--line); }
+  .gantt .bar { top: 9px; bottom: 9px; display: flex; align-items: center; padding: 0 10px; font-size: 11px; color: var(--text); white-space: nowrap; overflow: hidden; }
+  .gantt .now { position: absolute; top: 0; bottom: 0; width: 1px; left: 81%; background: var(--l-red); z-index: 3; }
+  .gantt .now::before { content: "NOW"; position: absolute; top: 4px; left: 4px; font: 9px "JetBrains Mono", monospace; color: var(--l-red); letter-spacing: .1em; }
+  .jobs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 12px; }
+  .job { padding: 20px; border-radius: 10px; background: var(--panel); border: 1px solid var(--line); border-top: 3px solid var(--c); }
+  .job h3 { font-size: 16px; font-weight: 600; margin-top: 6px; }
+  .job .where { color: var(--muted); font-size: 14px; }
+  .job ul { margin: 10px 0 0 16px; font-size: 14px; color: var(--muted); }
+  .job li + li { margin-top: 4px; }
+
+  /* Beyond: effects & presets */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .card { padding: 22px; border-radius: 10px; background: var(--panel); border: 1px solid var(--line); transition: transform .3s, border-color .3s; }
+  .card:hover { transform: translateY(-4px); border-color: var(--accent); }
+  .card .fxi { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 8px; font: 600 12px "JetBrains Mono", monospace; color: #fff; background: linear-gradient(135deg, var(--c1), var(--c2)); }
+  .card h3 { font-size: 16px; font-weight: 600; margin: 14px 0 6px; }
+  .card p { font-size: 14px; color: var(--muted); }
+
+  /* Toolkit + education */
+  .two { display: grid; grid-template-columns: 1.2fr 1fr; gap: 12px; }
+  .tool .row { padding-top: 10px; font-size: 13px; color: var(--text); }
+  .tool .slider { margin-bottom: 6px; }
+  .js .tool .slider i { width: 0; transition: width 1.4s cubic-bezier(.2,.8,.2,1); }
+  .js .in .tool .slider i { width: var(--w); }
+  .edu { padding: 16px 16px 0; }
+  .edu:last-child { padding-bottom: 16px; }
+  .edu b { display: block; font-weight: 600; margin-top: 4px; }
+  .edu span { color: var(--muted); font-size: 14px; }
+
+  /* Contact: render queue */
+  .contact { text-align: center; padding-bottom: 60px; }
+  .contact h2 { font-size: clamp(60px, 12vw, 136px); line-height: .9; margin: 18px 0 30px; }
+  .contact .cta { justify-content: center; }
+  .rq { max-width: 760px; margin: 0 auto 8px; text-align: left; }
+  .rq-row { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 12px; padding: 12px 14px; font-size: 13px; align-items: center; }
+  .rq-row.hd { padding: 8px 14px; background: var(--panel-2); border-bottom: 1px solid var(--line); }
+  .rq-row .st { color: var(--l-yel); font-family: "JetBrains Mono", monospace; font-size: 12px; }
+  .rq-row .st.done { color: var(--l-sea); }
+  .prog { height: 4px; margin: 0 14px 14px; border-radius: 4px; background: var(--line); overflow: hidden; }
+  .prog i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), var(--ae)); transition: width 2.6s cubic-bezier(.4,.1,.2,1); }
+  .in .prog i { width: 100%; }
+  .contact-rows { margin-top: 36px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px; font-size: 15px; }
+  .contact-rows a { border-bottom: 1px solid var(--line); transition: border-color .3s; }
+  .contact-rows a:hover { border-color: var(--accent); }
+  footer .wrap { display: flex; justify-content: space-between; padding-top: 22px; padding-bottom: 22px; border-top: 1px solid var(--line); }
+
+  /* Scroll-linked timeline at the bottom */
+  .scrub { position: fixed; left: 0; right: 0; bottom: 0; height: 40px; z-index: 20; display: flex; align-items: center; gap: 14px; padding: 0 16px;
+    background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid var(--line); }
+  .sruler { position: relative; flex: 1; height: 16px;
+    background: repeating-linear-gradient(90deg, var(--muted) 0 1px, transparent 1px 50px) bottom / 100% 12px no-repeat,
+                repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 10px) bottom / 100% 6px no-repeat; }
+  .sruler .fill { position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--accent); }
+  .sruler .head { position: absolute; top: -4px; bottom: 0; left: 0; width: 2px; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+  .sruler .head::before { content: ""; position: absolute; top: -3px; left: -4px; border: 5px solid transparent; border-top-color: var(--accent); }
+  .scrub .sec { color: var(--text); min-width: 110px; text-align: right; }
+
+  .js .reveal { opacity: 0; transform: translateY(30px); transition: opacity .9s, transform .9s cubic-bezier(.2,.8,.2,1); }
+  .js .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 980px) {
+    .ws { grid-template-columns: 1fr; }
+    .proj, .props, .menubar { display: none; }
+    .pp { grid-template-columns: 1fr; }
+    .about, .two { grid-template-columns: 1fr; }
+    .jobs, .cards { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .links { display: none; }
+    .pill .t { display: none; }
+    .pill { padding: 0 11px; }
+    .hero { padding-top: 14px; }
+    .titlebar .file { text-align: right; }
+    .stage { padding: 8px; }
+    .comp { min-height: 0; display: flex; flex-direction: column; }
+    .layer { position: relative; right: auto; bottom: auto; height: auto; width: 62%; margin: 34px auto 0; }
+    .comp-text { position: relative; left: auto; top: auto; transform: none; max-width: none; padding: 18px 18px 26px; }
+    .comp h1 { font-size: 64px; }
+    .vbar span:nth-child(n+3) { display: none; }
+    .tl-grid { grid-template-columns: 130px 1fr; }
+    .gantt .tl-grid { grid-template-columns: 110px 1fr; }
+    .tl-cols .eye, .tl-cols .r .n { display: none; }
+    .gantt .bar { font-size: 0; }
+    .screen { padding: 10px; min-height: 0; }
+    .frame { height: auto; width: min(100%, 340px); }
+    .rq-row { grid-template-columns: 1fr auto; }
+    .rq-row > :nth-child(2) { display: none; }
+    .stat b { font-size: 44px; }
+    .scrub .lbl { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .js .comp h1 .ch { transform: none; }
+    .js .reveal { opacity: 1; transform: none; }
+    .js .tool .slider i { width: var(--w); }
+    .prog i { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg" aria-hidden="true"><div class="orb a"></div><div class="orb b"></div><div class="grain"></div></div>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#"><b>AR</b>Ashfaq Rahman</a>
+    <div class="links">
+      <a href="#work">Work</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+    </div>
+    <div class="nav-r">
+      <button class="icon-btn" id="theme" aria-label="Switch light / dark theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg>
+      </button>
+      <a class="pill" href="https://wa.me/8801944828255?text=Hi%20Ashfaq%2C%20I%20have%20a%20project%20for%20you!" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+        <span class="t">Let’s talk</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== Hero: an After Effects-style workspace ===== -->
+<header class="wrap hero">
+  <div class="app" id="app">
+    <div class="titlebar">
+      <span class="dots"><i></i><i></i><i></i></span>
+      <span class="file">ashfaq_rahman_portfolio.aep</span>
+      <span class="mono">Motion</span>
+    </div>
+    <div class="menubar"><span>File</span><span>Edit</span><span>Composition</span><span>Layer</span><span>Effect</span><span>Animation</span><span>View</span><span>Window</span><span>Help</span></div>
+
+    <div class="ws">
+      <!-- Project panel -->
+      <div class="panel proj">
+        <div class="ph"><span class="tab on">Project</span><span class="tab">Effects</span></div>
+        <div class="thumb"><img src="photo.jpg" alt=""></div>
+        <div class="meta">Main Comp<br>1920 × 1080 · 25 fps</div>
+        <ul>
+          <li><span class="ico folder"></span>Reels (350+)</li>
+          <li><span class="ico folder"></span>Brand Animations</li>
+          <li class="sel"><span class="ico cmp"></span>Main Comp</li>
+          <li><span class="ico vid"></span>showreel_2026.mp4</li>
+          <li><span class="ico img"></span>photo.png</li>
+          <li><span class="ico aud"></span>music_bed.wav</li>
+        </ul>
+      </div>
+
+      <!-- Composition viewer -->
+      <div class="panel viewer">
+        <div class="ph"><span class="tab on">Composition: Main Comp <span class="x">×</span></span><span class="tab">Layer: photo.png</span></div>
+        <div class="stage">
+          <div class="comp">
+            <div class="layer" id="layer">
+              <img src="photo.jpg" alt="Portrait of Ashfaq Rahman" width="992" height="1068">
+              <div class="bbox"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="anchor"></span><span class="tag">3 · photo.png</span></div>
+            </div>
+            <div class="comp-text">
+              <h1 class="serif" id="name"><span class="line">Ashfaq</span><span class="line"><em>Rahman</em></span></h1>
+              <p class="role">
+                <span>I make brands move with</span>
+                <span class="swap" aria-label="motion graphics, reels, brand animation, video editing">
+                  <span>Motion Graphics</span><span>Reels &amp; Short-form</span><span>Brand Animation</span><span>Video Editing</span><span>Motion Graphics</span>
+                </span>
+              </p>
+              <p class="loc">Motion Designer &amp; Video Editor · Dhaka, Bangladesh</p>
+              <div class="cta">
+                <a class="btn solid" href="#work">▶ Watch my work</a>
+                <a class="btn glass" href="#contact">Have a project? Let’s talk</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="vbar"><span><b>(100%)</b> ▾</span><span>Full ▾</span><span>Active Camera ▾</span><span>1 View ▾</span><span>350+ reels rendered</span></div>
+      </div>
+
+      <!-- Effect controls -->
+      <div class="panel props">
+        <div class="ph"><span class="tab on">Effect Controls: photo.png</span></div>
+        <div class="grp">▾ Transform</div>
+        <div class="row"><svg class="sw" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="9" r="5.5"/><path d="M8 9V6M6.5 2h3"/></svg>Anchor Point<span class="v">496.0, 534.0</span></div>
+        <div class="row"><svg class="sw" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="9" r="5.5"/><path d="M8 9V6M6.5 2h3"/></svg>Position<span class="v" id="pPos">1360.0, 590.0</span></div>
+        <div class="row"><svg class="sw" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="9" r="5.5"/><path d="M8 9V6M6.5 2h3"/></svg>Scale<span class="v" id="pScale">100.0, 100.0%</span></div>
+        <div class="row"><svg class="sw" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="9" r="5.5"/><path d="M8 9V6M6.5 2h3"/></svg>Rotation<span class="v" id="pRot">0x +0.0°</span></div>
+        <div class="row"><svg class="sw" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="9" r="5.5"/><path d="M8 9V6M6.5 2h3"/></svg>Opacity<span class="v">100%</span></div>
+        <div class="fx">
+          <div class="grp" style="padding-left:0">fx ▾ Glow</div>
+          <div class="row">Glow Radius<span class="v">48.0</span></div>
+          <div class="slider"><i style="--w:48%"></i></div>
+          <div class="row">Glow Intensity<span class="v">1.8</span></div>
+          <div class="slider"><i style="--w:60%"></i></div>
+          <div class="grp" style="padding-left:0">fx ▾ Creativity</div>
+          <div class="row">Strategy<span class="v">100.0</span></div>
+          <div class="slider"><i style="--w:100%"></i></div>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="panel timeline">
+        <div class="ph tl-head">
+          <span class="tab on">Main Comp <span class="x">×</span></span>
+          <span class="sp"></span>
+          <button class="play" id="playBtn" aria-label="Pause animation">
+            <svg viewBox="0 0 10 10" fill="currentColor" id="playIco"><rect x="1" y="1" width="3" height="8"/><rect x="6" y="1" width="3" height="8"/></svg><span id="playTxt">Pause</span>
+          </button>
+        </div>
+        <div class="tl-grid">
+          <div class="tl-cols">
+            <div class="r hd mono">Layer name</div>
+            <div class="r"><svg class="eye" viewBox="0 0 16 16" fill="currentColor"><path d="M8 3C4 3 1.5 8 1.5 8S4 13 8 13s6.5-5 6.5-5S12 3 8 3zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg><span class="n">1</span><span class="ico" style="background:var(--l-aqua)"></span><span class="nm">T  Ashfaq Rahman</span></div>
+            <div class="r"><svg class="eye" viewBox="0 0 16 16" fill="currentColor"><path d="M8 3C4 3 1.5 8 1.5 8S4 13 8 13s6.5-5 6.5-5S12 3 8 3zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg><span class="n">2</span><span class="ico" style="background:var(--l-yel)"></span><span class="nm">T  Motion Designer</span></div>
+            <div class="r"><svg class="eye" viewBox="0 0 16 16" fill="currentColor"><path d="M8 3C4 3 1.5 8 1.5 8S4 13 8 13s6.5-5 6.5-5S12 3 8 3zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg><span class="n">3</span><span class="ico" style="background:var(--l-lav)"></span><span class="nm">photo.png</span></div>
+            <div class="r"><svg class="eye" viewBox="0 0 16 16" fill="currentColor"><path d="M8 3C4 3 1.5 8 1.5 8S4 13 8 13s6.5-5 6.5-5S12 3 8 3zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg><span class="n">4</span><span class="ico" style="background:var(--l-peach)"></span><span class="nm">★ Glow</span></div>
+            <div class="r"><svg class="eye" viewBox="0 0 16 16" fill="currentColor"><path d="M8 3C4 3 1.5 8 1.5 8S4 13 8 13s6.5-5 6.5-5S12 3 8 3zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg><span class="n">5</span><span class="ico" style="background:var(--l-blue)"></span><span class="nm">BG Gradient</span></div>
+          </div>
+          <div class="tracks">
+            <div class="r hd ruler"><span>0s</span><span>2s</span><span>4s</span><span>6s</span><span>8s</span></div>
+            <div class="workarea"></div>
+            <div class="r"><div class="bar" style="--s:2%;--e:6%;--c:var(--l-aqua)"></div><span class="kf ease" style="--x:2%"></span><span class="kf ease" style="--x:14%"></span><span class="kf" style="--x:80%"></span></div>
+            <div class="r"><div class="bar" style="--s:12%;--e:6%;--c:var(--l-yel)"></div><span class="kf ease" style="--x:12%"></span><span class="kf ease" style="--x:22%"></span><span class="kf" style="--x:52%"></span></div>
+            <div class="r"><div class="bar" style="--s:0%;--e:0%;--c:var(--l-lav)"></div><span class="kf" style="--x:6%"></span><span class="kf ease" style="--x:30%"></span><span class="kf ease" style="--x:60%"></span><span class="kf" style="--x:90%"></span></div>
+            <div class="r"><div class="bar" style="--s:20%;--e:24%;--c:var(--l-peach)"></div><span class="kf" style="--x:20%"></span><span class="kf ease" style="--x:44%"></span><span class="kf" style="--x:76%"></span></div>
+            <div class="r"><div class="bar" style="--s:0%;--e:0%;--c:var(--l-blue)"></div></div>
+            <div class="playhead"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Motion Graphics<i>◆</i></span><span>Reels<i>◆</i></span><span>After Effects<i>◆</i></span><span>Brand Animation<i>◆</i></span><span>Premiere Pro<i>◆</i></span><span>Short-form<i>◆</i></span><span>Meta Ads<i>◆</i></span><span>AI Workflows<i>◆</i></span>
+    <span>Motion Graphics<i>◆</i></span><span>Reels<i>◆</i></span><span>After Effects<i>◆</i></span><span>Brand Animation<i>◆</i></span><span>Premiere Pro<i>◆</i></span><span>Short-form<i>◆</i></span><span>Meta Ads<i>◆</i></span><span>AI Workflows<i>◆</i></span>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- ===== Work: Premiere-style program monitor ===== -->
+  <section id="work" class="reveal" data-name="Work">
+    <div class="label mono">01 — Selected work</div>
+    <h2 class="serif">See it in <em>motion.</em></h2>
+    <div class="pp" id="pp">
+      <div class="panel monitor">
+        <div class="ph"><span class="tab on">Program: <span id="clipName">reel_01.mp4</span></span><span class="sp"></span><span class="mono">Fit ▾</span></div>
+        <div class="screen">
+          <div class="frame"><iframe id="player" title="Selected reel" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div>
+        </div>
+        <div class="transport">
+          <span class="tc" id="clipIdx">01 / 04</span>
+          <button class="tbtn" id="prev" aria-label="Previous clip"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 2h2v12H3zM14 2v12L6 8z"/></svg></button>
+          <button class="tbtn big" id="open" aria-label="Open clip in Google Drive"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2v12l10-6z"/></svg></button>
+          <button class="tbtn" id="next" aria-label="Next clip"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M11 2h2v12h-2zM2 2v12l8-6z"/></svg></button>
+          <div class="seg" role="group" aria-label="Aspect ratio"><button class="on" data-ar="tall">9:16</button><button data-ar="wide">16:9</button></div>
+        </div>
+      </div>
+      <div class="panel bin">
+        <div class="ph"><span class="tab on">Project: Reels</span><span class="tab">Media Browser</span></div>
+        <div class="clips" id="clips"></div>
+        <div class="foot">
+          <a class="btn solid" href="https://drive.google.com/drive/folders/14y1W8bbMe-cOUTyWtuZfothaOtbNXass?usp=drive_link" target="_blank" rel="noopener">Open full portfolio ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section id="about" class="reveal" data-name="About">
+    <div class="label mono">02 — About</div>
+    <div class="about">
+      <div>
+        <h2 class="serif">Where creative <em>meets</em> strategy.</h2>
+        <p class="lead">Since 2021 I’ve been bringing brand identities to life through motion graphics, reels and branded video for teams like Socialfrenzy, Sozoo Today and Octagram Ltd.</p>
+        <p class="muted">I design for performance, not just looks. I understand Meta marketing and campaign psychology, so every frame has a job to do. When something gets repetitive, I vibe-code my own tools to speed it up — and right now I’m studying Film &amp; Media while going deep into AI.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="mono">Reels delivered</span><b data-count="350" data-suffix="+">350+</b></div>
+        <div class="stat"><span class="mono">Content reach</span><b data-count="2" data-suffix="×">2×</b></div>
+        <div class="stat"><span class="mono">Years in design</span><b data-count="5" data-suffix="">5</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Experience: AE layer timeline ===== -->
+  <section id="experience" class="reveal" data-name="Experience">
+    <div class="label mono">03 — Experience</div>
+    <h2 class="serif">Every layer, <em>keyframed.</em></h2>
+    <div class="panel gantt">
+      <div class="ph"><span class="tab on">Career Comp <span class="x">×</span></span></div>
+      <div class="tl-grid">
+        <div class="tl-cols">
+          <div class="r hd mono">Layer name</div>
+          <div class="r"><span class="ico" style="background:var(--l-aqua)"></span><span class="nm">Socialfrenzy</span></div>
+          <div class="r"><span class="ico" style="background:var(--l-pink)"></span><span class="nm">Sozoo Today</span></div>
+          <div class="r"><span class="ico" style="background:var(--l-peach)"></span><span class="nm">Octagram Ltd</span></div>
+        </div>
+        <div class="tracks">
+          <div class="r hd ruler"><span>2021</span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span></div>
+          <!-- 6 columns: each year = 16.67% -->
+          <div class="r"><div class="bar ani" style="--s:66.7%;--e:0%;--c:var(--l-aqua)">Motion Designer &amp; Video Editor</div><span class="kf" style="--x:66.7%"></span></div>
+          <div class="r"><div class="bar ani" style="--s:83.3%;--e:0%;--c:var(--l-pink)">Motion Designer</div><span class="kf" style="--x:83.3%"></span></div>
+          <div class="r"><div class="bar ani" style="--s:0%;--e:50%;--c:var(--l-peach)">Graphic Designer</div><span class="kf" style="--x:.8%"></span><span class="kf" style="--x:50%"></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="jobs">
+      <div class="job" style="--c:var(--l-aqua)">
+        <span class="mono">2025 — Now · Full-time</span>
+        <h3>Motion Designer &amp; Video Editor</h3>
+        <div class="where">Socialfrenzy</div>
+        <ul>
+          <li>Motion graphics, reels and social video for multiple brands and campaigns.</li>
+          <li>Delivered 350+ reels — sharpening storytelling, edit rhythm and motion flow.</li>
+          <li>Turn briefs into scroll-stopping content with strategists and designers.</li>
+        </ul>
+      </div>
+      <div class="job" style="--c:var(--l-pink)">
+        <span class="mono">2026 — Now · Part-time</span>
+        <h3>Motion Designer</h3>
+        <div class="where">Sozoo Today</div>
+        <ul>
+          <li>Plan, animate and edit short-form video shaped by audience trends.</li>
+          <li>Helped push content reach 2× through sharper content planning.</li>
+          <li>Fast turnaround on tight deadlines without letting quality slip.</li>
+        </ul>
+      </div>
+      <div class="job" style="--c:var(--l-peach)">
+        <span class="mono">2021 — 2023 · Part-time</span>
+        <h3>Graphic Designer</h3>
+        <div class="where">Octagram Ltd</div>
+        <ul>
+          <li>Where it started — social media design, brand visuals and my first motion graphics.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Beyond the edit ===== -->
+  <section class="reveal" data-name="Beyond the edit">
+    <div class="label mono">04 — Effects &amp; presets</div>
+    <h2 class="serif">Beyond the <em>edit.</em></h2>
+    <div class="cards">
+      <div class="card" style="--c1:var(--l-blue);--c2:var(--ae)">
+        <span class="fxi">fx</span>
+        <h3>Ads that convert</h3>
+        <p>At home in Meta Ads Manager — building funnels and running campaigns, so my creatives are made to convert.</p>
+      </div>
+      <div class="card" style="--c1:var(--l-aqua);--c2:var(--l-blue)">
+        <span class="fxi">&lt;/&gt;</span>
+        <h3>Building my own tools</h3>
+        <p>I vibe-code small apps and software that make my production workflow faster.</p>
+      </div>
+      <div class="card" style="--c1:var(--l-pink);--c2:var(--l-peach)">
+        <span class="fxi">AI</span>
+        <h3>Always learning</h3>
+        <p>Going past the tools — learning how AI really works and folding it into real creative pipelines.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Toolkit + Education ===== -->
+  <section class="reveal" data-name="Toolkit">
+    <div class="label mono">05 — Toolkit &amp; education</div>
+    <div class="two">
+      <div class="panel tool">
+        <div class="ph"><span class="tab on">Effect Controls: Ashfaq</span></div>
+        <div class="row">After Effects<span class="v">100.0</span></div><div class="slider"><i style="--w:100%"></i></div>
+        <div class="row">Premiere Pro<span class="v">100.0</span></div><div class="slider"><i style="--w:100%"></i></div>
+        <div class="row">Photoshop<span class="v">100.0</span></div><div class="slider"><i style="--w:100%"></i></div>
+        <div class="row">Illustrator<span class="v">80.0</span></div><div class="slider"><i style="--w:80%"></i></div>
+        <div class="row">AI Tools<span class="v">80.0</span></div><div class="slider"><i style="--w:80%"></i></div>
+        <div class="row">Figma<span class="v">60.0</span></div><div class="slider" style="margin-bottom:16px"><i style="--w:60%"></i></div>
+      </div>
+      <div class="panel">
+        <div class="ph"><span class="tab on">Info: Education</span></div>
+        <div class="edu"><span class="mono">2025 — Now</span><b>B.A. in Film &amp; Media</b><span>Stamford University Bangladesh</span></div>
+        <div class="edu"><span class="mono">2023 — 2024</span><b>Higher Secondary Certificate</b><span>Habibullah Bahar College</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact: render queue ===== -->
+  <section class="contact reveal" id="contact" data-name="Contact">
+    <span class="mono">Let’s make it move</span>
+    <h2 class="serif">Have a project?<br><em>Let’s talk.</em></h2>
+    <div class="panel rq">
+      <div class="ph"><span class="tab on">Render Queue</span></div>
+      <div class="rq-row hd mono"><span>Comp name</span><span>Output to</span><span>Status</span></div>
+      <div class="rq-row"><span>▸ Your_Next_Project</span><span class="muted">Ashfaq Rahman</span><span class="st" id="rqStatus">Queued…</span></div>
+      <div class="prog"><i></i></div>
+    </div>
+    <div class="cta">
+      <a class="btn wa" href="https://wa.me/8801944828255?text=Hi%20Ashfaq%2C%20I%20have%20a%20project%20for%20you!" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+        Chat on WhatsApp
+      </a>
+      <a class="btn" href="https://drive.google.com/drive/folders/14y1W8bbMe-cOUTyWtuZfothaOtbNXass?usp=drive_link" target="_blank" rel="noopener">▶ View portfolio ↗</a>
+    </div>
+    <div class="contact-rows">
+      <a href="https://wa.me/8801944828255" target="_blank" rel="noopener">WhatsApp · +880 1944-828255</a>
+      <a href="mailto:ashfaqrahmanofficial@gmail.com">ashfaqrahmanofficial@gmail.com</a>
+      <span class="muted">Dhaka, Bangladesh</span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">© 2026 Ashfaq Rahman</span>
+    <a class="mono" href="#">Top ↑</a>
+  </div>
+</footer>
+
+<div class="scrub" aria-hidden="true">
+  <span class="mono lbl">Timeline</span>
+  <div class="sruler"><div class="fill" id="fill"></div><div class="head" id="head"></div></div>
+  <span class="mono sec" id="sec">Intro</span>
+</div>
+
+<script>
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Hero name: staggered letter rise
+  if (!reduced) {
+    let i = 0;
+    document.querySelectorAll("#name .line").forEach(line => {
+      const host = line.querySelector("em") || line;
+      host.innerHTML = [...host.textContent].map(c =>
+        `<span class="ch" style="animation-delay:${0.2 + i++ * 0.05}s">${c}</span>`).join("");
+    });
+  }
+
+  // Theme toggle
+  document.getElementById("theme").addEventListener("click", () => {
+    const root = document.documentElement;
+    const next = root.dataset.theme === "light" ? "dark" : "light";
+    root.dataset.theme = next;
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
+
+  // Photo layer floats; the Effect Controls values follow it live
+  const layer = document.getElementById("layer");
+  const pPos = document.getElementById("pPos"), pScale = document.getElementById("pScale"), pRot = document.getElementById("pRot");
+  const app = document.getElementById("app");
+  let playing = !reduced, time = 0, last = performance.now(), lastUi = 0;
+  const tick = now => {
+    if (playing) time += (now - last) / 1000;
+    last = now;
+    const y = Math.sin(time * 1.1) * 8, r = Math.sin(time * 0.7) * 1.4, s = 100 + Math.sin(time * 0.5) * 2;
+    layer.style.transform = `translateY(${y}px) rotate(${r}deg) scale(${s / 100})`;
+    if (now - lastUi > 80) {
+      lastUi = now;
+      pPos.textContent = `1360.0, ${(590 + y).toFixed(1)}`;
+      pScale.textContent = `${s.toFixed(1)}, ${s.toFixed(1)}%`;
+      pRot.textContent = `0x ${r >= 0 ? "+" : ""}${r.toFixed(1)}°`;
+    }
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+
+  // Play / pause the hero timeline
+  const playBtn = document.getElementById("playBtn"), playIco = document.getElementById("playIco"), playTxt = document.getElementById("playTxt");
+  const setPlaying = on => {
+    playing = on;
+    app.classList.toggle("paused", !on);
+    playTxt.textContent = on ? "Pause" : "Play";
+    playBtn.setAttribute("aria-label", on ? "Pause animation" : "Play animation");
+    playIco.innerHTML = on ? '<rect x="1" y="1" width="3" height="8"/><rect x="6" y="1" width="3" height="8"/>' : '<path d="M1 1v8l8-4z"/>';
+  };
+  playBtn.addEventListener("click", () => setPlaying(!playing));
+  if (reduced) setPlaying(false);
+
+  // Work: Premiere-style monitor + bin. Add or swap clips here.
+  const CLIPS = [
+    { id: "1qu_jJyWC3gR-iIMTD7FQEZhdWNXulkV_", name: "reel_01.mp4", c1: "#3d9bff", c2: "#9a8cff" },
+    { id: "1ltlwBOdB5HHIGWgKvv1Ftv3vdm9Vx6_A", name: "reel_02.mp4", c1: "#4ccfc4", c2: "#3d9bff" },
+    { id: "1q5dqkd8fwF_Fyue4jMPtJFrSgrL7FOQo", name: "reel_03.mp4", c1: "#e57bb6", c2: "#f0a868" },
+    { id: "1lqgiz5YVNFnTtxXoV786Zknx4dbc6diK", name: "reel_04.mp4", c1: "#9a8cff", c2: "#e57bb6" },
+  ];
+  const player = document.getElementById("player"), clipsEl = document.getElementById("clips");
+  const clipName = document.getElementById("clipName"), clipIdx = document.getElementById("clipIdx");
+  let cur = 0;
+  clipsEl.innerHTML = CLIPS.map((c, i) => `
+    <button class="clip" data-i="${i}" style="--c1:${c.c1};--c2:${c.c2}" aria-label="Play ${c.name}">
+      <div class="th"><img src="https://drive.google.com/thumbnail?id=${c.id}&sz=w600" alt="" loading="lazy" onerror="this.remove()"></div>
+      <div class="cn"><span class="ico" style="background:${c.c1}"></span>${c.name}</div>
+      <div class="cm">Clip ${String(i + 1).padStart(2, "0")} · Reel</div>
+    </button>`).join("");
+  const select = (i, load) => {
+    cur = (i + CLIPS.length) % CLIPS.length;
+    const c = CLIPS[cur];
+    if (load) player.src = `https://drive.google.com/file/d/${c.id}/preview`;
+    clipName.textContent = c.name;
+    clipIdx.textContent = `${String(cur + 1).padStart(2, "0")} / ${String(CLIPS.length).padStart(2, "0")}`;
+    clipsEl.querySelectorAll(".clip").forEach((el, j) => el.classList.toggle("on", j === cur));
+  };
+  clipsEl.addEventListener("click", e => {
+    const b = e.target.closest(".clip");
+    if (b) { select(+b.dataset.i, true); if (innerWidth < 980) document.querySelector(".monitor").scrollIntoView({ behavior: "smooth", block: "start" }); }
+  });
+  document.getElementById("prev").addEventListener("click", () => select(cur - 1, true));
+  document.getElementById("next").addEventListener("click", () => select(cur + 1, true));
+  document.getElementById("open").addEventListener("click", () => window.open(`https://drive.google.com/file/d/${CLIPS[cur].id}/view`, "_blank", "noopener"));
+  document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => {
+    document.querySelectorAll(".seg button").forEach(x => x.classList.toggle("on", x === b));
+    document.getElementById("pp").classList.toggle("wide", b.dataset.ar === "wide");
+  }));
+  select(0, true);
+
+  // Bottom timeline follows scroll and names the current section
+  const head = document.getElementById("head"), fill = document.getElementById("fill"), sec = document.getElementById("sec");
+  const sections = [...document.querySelectorAll("section[data-name]")];
+  const onScroll = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    const p = max > 0 ? Math.min(1, scrollY / max) : 0;
+    head.style.left = fill.style.width = (p * 100) + "%";
+    let name = "Intro";
+    sections.forEach(s => { if (s.getBoundingClientRect().top < innerHeight * 0.5) name = s.dataset.name; });
+    sec.textContent = name;
+  };
+  addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  // Reveal on scroll, count-up stats, render queue
+  const countUp = el => {
+    const end = +el.dataset.count, suf = el.dataset.suffix || "", start = performance.now();
+    const step = now => {
+      const k = Math.min(1, (now - start) / 1400), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = Math.round(end * e) + suf;
+      if (k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  const io = new IntersectionObserver(entries => entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    en.target.classList.add("in");
+    if (!reduced) en.target.querySelectorAll("[data-count]").forEach(countUp);
+    if (en.target.id === "contact") {
+      const st = document.getElementById("rqStatus");
+      st.textContent = "Rendering…";
+      setTimeout(() => { st.textContent = "Ready ✓ — just say hi"; st.classList.add("done"); }, reduced ? 0 : 2600);
+    }
+    io.unobserve(en.target);
+  }), { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+</script>
+</body>
+</html>
